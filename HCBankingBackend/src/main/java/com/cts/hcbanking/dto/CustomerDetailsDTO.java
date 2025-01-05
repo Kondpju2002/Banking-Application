@@ -7,10 +7,12 @@ import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class CustomerDetailsDTO {
 
 	@NotBlank(message = "Name is mandatory")
@@ -24,6 +26,12 @@ public class CustomerDetailsDTO {
 	private String Email;
 	@Min(value = 0, message = "Balance must be non-negative")
 	private double balance;
+	@NotBlank(message = "Password is mandatory")
+    @Size(min = 8, message = "Password must be at least 6 characters long")
+	private String password;
+	
+	@NotBlank(message = "Role is mandatory")
+    private String role;
 	
 	
 	

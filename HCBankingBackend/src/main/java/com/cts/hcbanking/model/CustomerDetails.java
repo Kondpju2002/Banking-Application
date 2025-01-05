@@ -5,11 +5,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CustomerDetails {
 
 	@Id
@@ -19,6 +23,12 @@ public class CustomerDetails {
 	private Long phonenum;
 	private String Email;
 	private double balance;
+	private String password;
+	private String role;
+	
+//	private Long aadharNumber;
+	
+	
 	
 	
 	

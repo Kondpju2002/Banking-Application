@@ -40,7 +40,7 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
 		http.csrf(customizer -> customizer.disable());
-		http.authorizeHttpRequests(request -> request.requestMatchers("/signin").permitAll()
+		http.authorizeHttpRequests(request -> request.requestMatchers("/auth/**").permitAll()
 				.anyRequest().authenticated());
 //		http.formLogin(Customizer.withDefaults());
 		http.httpBasic(Customizer.withDefaults());
